@@ -1,1 +1,1 @@
-A primeira lista de exercício se trata vários de formulários desenvolvidos usando o framework Bootstrap.
+Todos os exercícios foram desenvolvidos durante a disciplina de Linguagem de Programação VI. 
