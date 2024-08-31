@@ -19,7 +19,7 @@
 
                 echo "Perímetro do circulo: $perimetro cm";
             } catch (Exception $e) { 
-                echo "Erro". $e->getMessage();
+                echo "Erro". $e->getMessage(); 
             }
         }
     
