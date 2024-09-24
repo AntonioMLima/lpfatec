@@ -11,37 +11,10 @@ declare(strict_types=1);
   </head>
   <body class="container">
     <h1>Exercício 3</h1>
-
-
     <?php
-
     function lerPalavra(int $numpalavra):string {
         return $_POST["palavra$numpalavra"];
-    }
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-        try {
-            $palavra1 = (string) lerPalavra(1);
-            $palavra2 = (string) lerPalavra(2);
-
-            $isContida = (bool) str_contains($palavra1, $palavra2);
-
-            if ($isContida) {
-                echo "A palavra $palavra2 está contida em $palavra1";
-            } else {
-                echo "A palavra $palavra2 não está contida em $palavra1";
-            }
-
-
-        } catch (Exception $e) {
-            echo "Erro: ".$e->getMessage();
-        }
-    }
-
-
-    ?>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+    }if ($_SERVER["REQUEST_METHOD"] == "POST") { try { $palavra1 = (string) lerPalavra(1); $palavra2 = (string) lerPalavra(2);$isContida = (bool) str_contains($palavra1, $palavra2);$esta = (string) $isContida ? "está" : "não está";echo "A palavra $palavra2 $esta contida em $palavra1";} catch (Exception $e) {
+            echo "Erro: ".$e->getMessage();}}?><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
 </html>

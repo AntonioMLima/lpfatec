@@ -18,7 +18,7 @@ declare(strict_types=1);
     
     function apresentarData(int $dia, int $mes, int $ano) {
       $data = new DateTime("$ano-$mes-$dia");
-      $data = $data->format('d-m-Y');
+      $data = $data->format('d/m/Y');
 
       echo "<p>Data: $data</p>";
     }

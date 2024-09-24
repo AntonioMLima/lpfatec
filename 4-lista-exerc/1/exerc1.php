@@ -13,7 +13,7 @@
     <form action="exerc1resp.php" method="POST">
         <div class="row pb-3">
             <div class="col">
-                <label for="palavra" class="form-label"> Palavra </label>
+                <label for="palavra" class="form-label"> Palavra: </label>
                 <input type="text" class="form-control form-control-sm" name="palavra" id="palavra">
             </div>
         </div>

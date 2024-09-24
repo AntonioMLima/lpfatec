@@ -23,7 +23,7 @@ declare(strict_types=1);
 
         $palavra = (string) lerDado();
 
-        $tam_palavra = strlen($palavra);
+        $tam_palavra = (int) strlen($palavra);
 
         echo "<p>Tamanho da palavra: $tam_palavra</p>";
     }
