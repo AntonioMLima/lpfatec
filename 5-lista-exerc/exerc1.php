@@ -17,17 +17,17 @@ declare(strict_types=1);
     <form action="" method="POST">
         <div class="row pt-4">
             <?php 
-            for($i = 1; $i <= 5; $i++)  :?>
+            for($i = 0; $i <= 5; $i++)  :?>
                 <div class="col pe-4">
 
                     
-                    <h3>Contato <?php echo $i?></h3>
+                    <h3>Contato <?php echo $i+1?></h3>
 
                     <label for="nomes[]" class="form-label"> Nome: </label>
-                    <input type="text" name="nomes[]" class="form-control form-control-sw">
+                    <input type="text" name="nomes[]" class="form-control form-control-sm">
                     
                     <label for="telefones[]" class="form-label"> Telefone: </label>
-                    <input type="text" name="telefones[]" class="form-control form-control-sw">
+                    <input type="text" name="telefones[]" class="form-control form-control-sm">
                  
                     
                 </div>
@@ -44,32 +44,34 @@ declare(strict_types=1);
         
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $nomes = $_POST["nomes"];
-            $telefones = $_POST["telefones"];
-            $listaContatos = array();
-            
 
-            for ($i = 0; $i < 5;$i++) {
-                $chavesctt = array_keys($listaContatos);
-                $valoresctt = array_values($listaContatos);
+            try {
 
-
-                if ((!in_array($nomes[$i], $chavesctt) && !in_array($telefones[$i], $valoresctt))) {
-                    $listaContatos[$nomes[$i]] = $telefones[$i];
+                $nomes = $_POST["nomes"];
+                $telefones = $_POST["telefones"];
+                $listaContatos = array();
+                
+    
+                for ($i = 0; $i < 5;$i++) {
+                    $chavesctt = array_keys($listaContatos);
+                    $valoresctt = array_values($listaContatos);
+    
+    
+                    if ((!in_array($nomes[$i], $chavesctt) && !in_array($telefones[$i], $valoresctt))) {
+                        $listaContatos[$nomes[$i]] = $telefones[$i];
+                    }  
                 }
 
+                ksort($listaContatos);
+    
+    
+                echo '<pre>'; print_r($listaContatos); echo '</pre>';
 
-            ksort($listaContatos);
-
+    
             
-        }
-
-
-        foreach ($listaContatos as $nome => $telefone) {
-            echo "<p>$nome: $telefone</p>";
-        }
-
-        $listaContatos = array();
+            } catch (Exception $e) {
+                echo "<p> Erro: ". $e->getMessage(). "</p>";
+            }
     }
     ?>
 
